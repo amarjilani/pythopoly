@@ -20,6 +20,7 @@ players = [p1, p2, p3, p4]
 
 main_font = pygame.font.SysFont("Segoe UI", 70, True)
 scoreboard_font = pygame.font.SysFont("Segoe UI", 30, True)
+buy_font = pygame.font.SysFont("Segoe UI", 40, True)
 
 # create screen
 screen = pygame.display.set_mode((1024, 1024))
@@ -64,11 +65,11 @@ player_bank = main_font.render("Balance = $" + str(players[turn].get_balance()),
 rolled_num = main_font.render(str(0), False, "Black")
 
 # purchase property
-buy = main_font.render("Buy", False, "Black")
-buy_rect = buy.get_rect(center=(400, 400))
+buy = buy_font.render("Buy", False, "Black")
+buy_rect = buy.get_rect(center=(400, 800))
 border = pygame.draw.rect(bg, "Green", buy_rect, 0, 20)
-notbuy = main_font.render("Pass", False, "Black")
-notbuy_rect = notbuy.get_rect(center=(600, 400))
+notbuy = buy_font.render("Pass", False, "Black")
+notbuy_rect = notbuy.get_rect(center=(600, 800))
 border2 = pygame.draw.rect(bg, "Red", notbuy_rect, 0, 20)
 
 
@@ -130,9 +131,9 @@ while running:
         screen.blit(p4.get_image(), p4.get_rect())
         whos_turn = main_font.render(players[turn].get_name() + "'s turn", False, "Black")
         player1_bank = scoreboard_font.render("Black: $" + str(players[0].get_balance()), False, "Black")
-        player2_bank = scoreboard_font.render("Red: $" + str(players[1].get_balance()), False, "Black")
-        player3_bank = scoreboard_font.render("Blue: $" + str(players[2].get_balance()), False, "Black")
-        player4_bank = scoreboard_font.render("Green: $" + str(players[3].get_balance()), False, "Black")
+        player2_bank = scoreboard_font.render("Red: $" + str(players[1].get_balance()), False, "Red")
+        player3_bank = scoreboard_font.render("Blue: $" + str(players[2].get_balance()), False, "Blue")
+        player4_bank = scoreboard_font.render("Green: $" + str(players[3].get_balance()), False, "DarkGreen")
         screen.blit(whos_turn, (330, 200))
         screen.blit(player1_bank, (150, 600))
         screen.blit(player2_bank, (150, 630))
