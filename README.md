@@ -26,5 +26,6 @@ Here's a screenshot of the board!
 </div>
 
 Here's a short video demo! 
+<p></p>
 https://user-images.githubusercontent.com/77746571/186502682-6f335674-ff1c-4738-bc1a-df57389d8052.mp4
 
