@@ -18,9 +18,9 @@ p3 = game.create_player("Blue", 1500)
 p4 = game.create_player("Green", 1500)
 players = [p1, p2, p3, p4]
 
-main_font = pygame.font.SysFont("Segoe UI", 70, True)
-scoreboard_font = pygame.font.SysFont("Segoe UI", 30, True)
-buy_font = pygame.font.SysFont("Segoe UI", 40, True)
+main_font = pygame.font.Font("graphics/Poppins-ExtraBold.ttf", 70)
+scoreboard_font = pygame.font.Font("graphics/Poppins-ExtraBold.ttf", 30)
+buy_font = pygame.font.Font("graphics/Poppins-ExtraBold.ttf", 40)
 
 # create screen
 screen = pygame.display.set_mode((1024, 1024))
@@ -36,22 +36,22 @@ pygame.display.set_icon(icon)
 bg = pygame.image.load("graphics/board-final.png")
 
 # player
-player1 = pygame.image.load("graphics/pawn.png")
+player1 = pygame.image.load("graphics/test2.png")
 player1_rect = player1.get_rect(center=(945, 960))
 p1.set_image(player1)
 p1.set_rect(player1_rect)
 
-player2 = pygame.image.load("graphics/pawn2.png")
+player2 = pygame.image.load("graphics/new_icon_red.png")
 player2_rect = player2.get_rect(center=(950, 960))
 p2.set_image(player2)
 p2.set_rect(player2_rect)
 
-player3 = pygame.image.load("graphics/pawn3.png")
+player3 = pygame.image.load("graphics/new_icon_blue.png")
 player3_rect = player3.get_rect(center=(955, 960))
 p3.set_image(player3)
 p3.set_rect(player3_rect)
 
-player4 = pygame.image.load("graphics/pawn4.png")
+player4 = pygame.image.load("graphics/new_icon_green.png")
 player4_rect = player4.get_rect(center=(960, 960))
 p4.set_image(player4)
 p4.set_rect(player4_rect)
@@ -134,7 +134,7 @@ while running:
         player2_bank = scoreboard_font.render("Red: $" + str(players[1].get_balance()), False, "Red")
         player3_bank = scoreboard_font.render("Blue: $" + str(players[2].get_balance()), False, "Blue")
         player4_bank = scoreboard_font.render("Green: $" + str(players[3].get_balance()), False, "DarkGreen")
-        screen.blit(whos_turn, (330, 200))
+        screen.blit(whos_turn, (320, 200))
         screen.blit(player1_bank, (150, 600))
         screen.blit(player2_bank, (150, 630))
         screen.blit(player3_bank, (150, 660))
